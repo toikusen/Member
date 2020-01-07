@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -30,6 +31,7 @@ public class GenderActivity extends AppCompatActivity implements View.OnClickLis
         ed_gender = findViewById(R.id.gender);
         testGender = ed_gender.getText().toString();
         if("man".equals(testGender) || "woman".equals(testGender)){
+            Log.d("RESULT_GENDER", testGender);
             SharedPreferences pref = getSharedPreferences("test",MODE_PRIVATE);
             pref.edit()
                     .putString("gender", testGender)

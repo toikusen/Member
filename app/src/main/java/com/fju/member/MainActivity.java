@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText nickname;
     private EditText age;
     private EditText gender;
+    private String resultNickname;
+    private String resultAge;
+    private String resultGender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,15 @@ public class MainActivity extends AppCompatActivity {
     public void login (View view){
         Intent intent = new Intent(this,NicknameActivity.class);
         startActivityForResult(intent,RCL);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resultNickname = nickname.getText().toString();
+        resultAge = age.getText().toString();
+        resultGender = gender.getText().toString();
+        Log.d("RESULT", resultNickname + "/" + resultAge + "/" + resultGender);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -29,6 +30,7 @@ public class NicknameActivity extends AppCompatActivity implements View.OnClickL
         ed_nickname = findViewById(R.id.nickname);
         testNickname = ed_nickname.getText().toString();
         if(!TextUtils.isEmpty(testNickname)){
+            Log.d("RESULT_NICKNAME", testNickname);
             Intent age = new Intent(this,AgeActivity.class);
             SharedPreferences pref = getSharedPreferences("test",MODE_PRIVATE);
             pref.edit()

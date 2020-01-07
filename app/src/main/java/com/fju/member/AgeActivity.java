@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -29,6 +30,7 @@ public class AgeActivity extends AppCompatActivity implements View.OnClickListen
         ed_age = findViewById(R.id.age);
         testAge = ed_age.getText().toString();
         if(!TextUtils.isEmpty(testAge)){
+            Log.d("RESULT_AGE", testAge);
             Intent gender = new Intent(this,GenderActivity.class);
             SharedPreferences pref = getSharedPreferences("test",MODE_PRIVATE);
             pref.edit()
