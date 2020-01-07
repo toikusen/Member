@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private String resultNickname;
     private String resultAge;
     private String resultGender;
+    boolean logon = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +27,10 @@ public class MainActivity extends AppCompatActivity {
         nickname = findViewById(R.id.ni);
         age = findViewById(R.id.ag);
         gender = findViewById(R.id.ge);
-
-    }
-
-    public void login (View view){
-        Intent intent = new Intent(this,NicknameActivity.class);
-        startActivityForResult(intent,RCL);
+        if (!logon){
+            Intent login = new Intent(this, NicknameActivity.class);
+            startActivityForResult(login,RCL);
+        }
     }
 
     @Override

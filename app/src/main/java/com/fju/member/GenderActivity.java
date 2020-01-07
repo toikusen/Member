@@ -43,7 +43,6 @@ public class GenderActivity extends AppCompatActivity implements View.OnClickLis
         rg.addView(rb_man);
         rg.addView(rb_woman);
 
-
         switch (rg.getCheckedRadioButtonId()){
             case R.id.rb_man:
                 Log.d("RESULT_GENDER", testGender);
